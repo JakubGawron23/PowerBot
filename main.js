@@ -7,7 +7,7 @@ client.once('ready', () => {
 	console.log('Ready!');
 });
 
-client.login(token);
+client.login(process.env.BOT_TOKEN);
 client.on('message', message => {
     console.log(message.content);
     if (message.content === `${prefix}ping`) {
