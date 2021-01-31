@@ -1,13 +1,15 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
 const message = new Discord.Message;
-const { prefix, token } = require('./config');
+
+require('dotenv').config();
+const token = process.env.BOT_TOKEN
 
 client.once('ready', () => {
 	console.log('Ready!');
 });
 
-client.login(process.env.BOT_TOKEN);
+client.login(token);
 client.on('message', message => {
     console.log(message.content);
     if (message.content === `${prefix}ping`) {
